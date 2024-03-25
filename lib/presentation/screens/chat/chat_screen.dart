@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yes_no_app/presentation/wifgets/chat/message_bubble.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -36,7 +37,7 @@ class ChatView extends StatelessWidget {
             Expanded(child: ListView.builder(
               itemCount: 100,
               itemBuilder: (context, index) {
-              return Text("Index: ${index}");
+              return const MessageBubble();
             },)),
             Text("Hola"),
             Text("Mundo"),
