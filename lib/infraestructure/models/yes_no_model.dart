@@ -1,10 +1,30 @@
-class YesNoModel {
-  final String answer;
-  final bool forced;
-  final String imageUrl;
+import 'package:yes_no_app/domain/entities/message.dart';
 
-  YesNoModel({required this.answer, required this.forced, required this.imageUrl});
-  
-  YesNoModel.fromMap({required Map<String, dynamic>map}): this(answer: map["answer"], forced: map["forced"], imageUrl: map["image"]);
+class YesNoModel {
+    final String answer;
+    final bool forced;
+    final String image;
+
+    YesNoModel({
+        required this.answer,
+        required this.forced,
+        required this.image,
+    });
+
+    factory YesNoModel.fromJson({required Map<String, dynamic> map}) => YesNoModel(
+        answer: map["answer"],
+        forced: map["forced"],
+        image: map["image"],
+    );
+
+    Map<String, dynamic> toJson() => {
+        "answer": answer,
+        "forced": forced,
+        "image": image,
+    };
+
+    Message toEntity() {
+      return Message(text: answer, fromWho: FromWho.hers, urlImg: image);
+    }
 
 }
