@@ -41,7 +41,7 @@ class TextFieldBox extends StatelessWidget {
       controller: textController,
       decoration: inputDecoration,
       onFieldSubmitted: (value) {
-        print("On Submit: $value.");
+        // print("On Submit: $value.");
         onValue(value);
         textController.clear();
         focusNode.requestFocus();
